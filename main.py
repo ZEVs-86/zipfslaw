@@ -3,7 +3,7 @@ import codecs
 import matplotlib.pyplot as plt
 
 filename = "bible.txt"
-file = codecs.open("E:\\PythonProjects\\word-counter\\" + filename, "r+", "utf_8_sig")
+file = codecs.open(filename, "r+", "utf_8_sig")
 wordcount = {}
 for word in file.read().split():
     if word not in wordcount:
@@ -20,9 +20,8 @@ counts = []
 for x in wordcount_sorted:
     word = x[0]
     count = x[1]
-    if count > 10:
-        print("{}: {}".format(word, count))
-        counts.append(count)
+    print("{}: {}".format(word, count))
+    counts.append(count)
 
 print(counts)
 plt.plot(counts)
